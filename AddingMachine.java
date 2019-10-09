@@ -22,10 +22,16 @@ public class AddingMachine {
 	private int total;
 
 	/**
+	 * calcInstructions holds the string the calculation instructions.
+	 */
+	private String calcInstruction;
+
+	/**
 	 * NOT NEEEDED, initializes the total variable
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		calcInstruction = "0 ";
 	}
 
 	/**
@@ -33,7 +39,7 @@ public class AddingMachine {
 	 * @return the total amount
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 
 	/**
@@ -41,7 +47,8 @@ public class AddingMachine {
 	 * @param value
 	 */
 	public void add (int value) {
-		
+		total = total + value;
+		calcInstruction += "+ " + value + " ";
 	}
 
 	/**
@@ -49,7 +56,8 @@ public class AddingMachine {
 	 * @param value
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
+		calcInstruction += "- " + value + " ";
 	}
 
 	/**
@@ -57,13 +65,14 @@ public class AddingMachine {
 	 * @return String of calculation instructions
 	 */
 	public String toString () {
-		return "";
+		return calcInstruction;
 	}
 
 	/**
 	 * This Method clears the total variable
 	 */
 	public void clear() {
-	
+	    total = 0;
+	    calcInstruction = "0 ";
 	}
 }
